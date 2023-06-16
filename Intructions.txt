@@ -1,0 +1,16 @@
+---- En modelos vamos a crear tres tablas
+---- esta forma se trata de crear relaciones entre las tablas
+---- Usuario pais estado
+
+---- de esta forma el usuario tendra un atributo del pais y del estado en donde vive
+
+==== habilitar cors ======
+---- los cors son una politica de seguridad
+---- lo que implica una serie de reglas de control de acceso
+---- Mecanismo que utiliza cabeceras HTTP adicionales para permitir a un cliente acceder a recursos
+---- desde un origrn diferente al sitio actual
+
+---- Con cors podemos habilitar get y deshabilitar put delete etc
+---- spring nos permite hacer la configuracion a nivel de metodos 
+---- y a nivel global es decir a nivel de clase
+---- 
