@@ -17,13 +17,11 @@ import javax.persistence.Table;
 @Table(name = "usuarios")
 public class UsuarioModel {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private long id;
 
-    
     private String nombre;
     private String apellido;
     private long edad;
