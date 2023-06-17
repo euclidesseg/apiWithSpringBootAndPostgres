@@ -15,13 +15,20 @@ import javax.persistence.Table;
  * que añadamos sera una columna en la base de datos
  */
 @Table(name = "usuarios")
+/* especificamos que la tabla se va a llamar usuario */
 public class UsuarioModel {
 
+    /**
+     *
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /* que se genere automaticamente y que se atutoincremente el campo id */
     @Column(unique = true, nullable = false)
+    /* que es unico y no null */
     private long id;
 
+    
     private String nombre;
     private String apellido;
     private long edad;
@@ -29,13 +36,19 @@ public class UsuarioModel {
     private long prioridad;
 
     @ManyToOne
+    // se agrega esta sentencia por la relacion entre pais y usuario
+    // la clave de pais pasa a ser clave foranea de usuario
     @JoinColumn(name = "id_pais")
+    // join column indica que id_pais es el nombre del pais con el que vamos a identificar el pais
+    // cuando agreguemos un usuario nuevo, es decir, cuando agregamos un usuario nuevo y lea agreguemos
+    // un pais lo haremos con id_pais = el id del pais
     private PaisModel pais;
     
     @ManyToOne
     @JoinColumn(name = "id_estado")
     private EstadoModel estado;
 
+    /* DECLARANDO LOS METODOS PARA MANIPULAR LAS PROPIEDADES DE LA CLASE */
     public void setPrioridad(long prioridad) {
         this.prioridad = prioridad;
     }
